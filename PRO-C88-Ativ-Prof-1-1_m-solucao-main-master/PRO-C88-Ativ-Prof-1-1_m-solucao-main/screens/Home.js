@@ -7,13 +7,17 @@ import {
   Platform,
   StatusBar,
   TouchableOpacity,
+  ImageBackground,
+  Image
 } from 'react-native';
 
 export default class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <SafeAreaView style={styles.droidSafeArea} />
+        <SafeAreaView style={styles.droidSafeArea}/>
+        <ImageBackground source={require('../assets/space.gif')}
+        resizeMode='cover' style={styles.backgroundImage}>
         <View style={styles.titleBar}>
           <Text style={styles.titleText}>App Estelar</Text>
         </View>
@@ -21,18 +25,22 @@ export default class HomeScreen extends Component {
         <TouchableOpacity style={styles.routeCard}>
           <Text style={styles.routeText}>Imagens diárias</Text>
           <Text style={styles.knowMore}>{" Saiba Mais ---> "}</Text>
+          <Image source={require('../assets/main-icon.png')} style={styles.iconImage}/>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.routeCard}>
           <Text style={styles.routeText}>Nave espacial</Text>
           <Text style={styles.knowMore}>{" Saiba Mais ---> "}</Text>
+          <Image source={require('../assets/space_crafts.png')} style={styles.iconImage}/>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.routeCard}>
           <Text style={styles.routeText}>Mapa das estrelas</Text>
           <Text style={styles.knowMore}>{" Saiba Mais ---> "}</Text>
+          <Image source={require('../assets/star_map.png')} style={styles.iconImage}/>
         </TouchableOpacity>
         
+        </ImageBackground>
       </View>
     );
   }
@@ -76,5 +84,17 @@ const styles = StyleSheet.create({
     color: 'red',
     fontSize: 15,
     marginTop: 20
+  },
+  backgroundImage: {
+    flex: 1,
+    justifyContent: 'center'
+  },
+  iconImage: {
+    position: 'absolute',
+    height: 100,
+    width: 100,
+    resizeMode: 'contain',
+    top: -30,
+    alignSelf: 'center'
   }
 });
