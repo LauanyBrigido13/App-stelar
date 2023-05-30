@@ -22,21 +22,24 @@ export default class HomeScreen extends Component {
           <Text style={styles.titleText}>App Estelar</Text>
         </View>
 
-        <TouchableOpacity style={styles.routeCard}>
+        <TouchableOpacity style={styles.routeCard} onPress={() =>
+              this.props.navigation.navigate("DailyPic")}>
           <Text style={styles.routeText}>Imagens diárias</Text>
-          <Text style={styles.knowMore}>{" Saiba Mais ---> "}</Text>
+          
           <Image source={require('../assets/main-icon.png')} style={styles.iconImage}/>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.routeCard}>
+        <TouchableOpacity style={styles.routeCard} onPress={() =>
+            this.props.navigation.navigate("SpaceCraft")}>
           <Text style={styles.routeText}>Nave espacial</Text>
-          <Text style={styles.knowMore}>{" Saiba Mais ---> "}</Text>
+          
           <Image source={require('../assets/space_crafts.png')} style={styles.iconImage}/>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.routeCard}>
+        <TouchableOpacity style={styles.routeCard} onPress={() =>
+              this.props.navigation.navigate("StarMap")}>
           <Text style={styles.routeText}>Mapa das estrelas</Text>
-          <Text style={styles.knowMore}>{" Saiba Mais ---> "}</Text>
+          
           <Image source={require('../assets/star_map.png')} style={styles.iconImage}/>
         </TouchableOpacity>
         
